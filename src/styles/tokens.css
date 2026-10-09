@@ -1,0 +1,28 @@
+:root {
+  --bg: #f8f6f2;
+  --surface: #fffdfa;
+  --surface-2: #eee7dd;
+  --header-bg: #f8f6f2;
+  --text: #292820;
+  --text-muted: #756f65;
+  --border: #dfd8ce;
+  --primary: #292820;
+  --primary-dark: #474637;
+  --primary-soft: #eeebe3;
+  --accent: #957752;
+  --accent-dark: #765c3c;
+  --olive: #5e654c;
+  --white: #ffffff;
+  --glass: rgba(255, 253, 250, 0.92);
+  --hero-wash: rgba(248, 246, 242, 0.75);
+  --transparent: rgba(248, 246, 242, 0);
+  --shadow-color: rgba(49, 39, 26, 0.09);
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Manrope", "Segoe UI", sans-serif;
+  --radius-sm: 3px;
+  --radius: 6px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 2px 8px var(--shadow-color);
+  --shadow: 0 12px 40px var(--shadow-color);
+  --container: 1280px;
+}

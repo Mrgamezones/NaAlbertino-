@@ -1,0 +1,21 @@
+.section { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; padding-block: 80px; }
+.editorial { position: relative; display: flex; height: 460px; border-radius: var(--radius); overflow: hidden; background: var(--surface-2); }
+.editorial > img { width: 55%; height: 100%; object-fit: cover; object-position: 48% center; }
+.editorialText { position: relative; width: 45%; padding: 33px 14px 24px 22px; display: flex; flex-direction: column; justify-content: center; }
+.editorialText .eyebrow { font-size: 8px; }
+.editorialText > p { margin-top: 32px; font-family: var(--font-display); font-size: 47px; letter-spacing: -1.3px; line-height: 1.04; }
+.editorialText em { color: var(--accent-dark); font-weight: 400; }
+.signature { margin-top: 35px; font-family: var(--font-display); font-style: italic; color: var(--accent-dark); font-size: 23px; }
+.imageNote { position: absolute; left: 12px; bottom: 10px; font-size: 7px; color: var(--primary-dark); }
+.content h2 { margin-top: 16px; font-size: 44px; letter-spacing: -1.1px; }
+.content h2 em { color: var(--accent-dark); font-weight: 400; }
+.content > p { margin-top: 18px; color: var(--text-muted); font-size: 11px; line-height: 1.95; max-width: 420px; }
+.content > a { margin-top: 17px; }
+.signoff { display: flex; align-items: center; gap: 18px; margin-top: 25px; }
+.signoff > svg { width: 70px; height: 70px; fill: none; stroke: var(--accent); stroke-width: .7; }
+.arc { fill: var(--accent-dark); stroke: none; font-family: var(--font-body); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; }
+.monogram { fill: var(--accent-dark); stroke: none; font-family: var(--font-display); font-size: 32px; }
+.signoff > span { font-size: 10px; line-height: 1.8; color: var(--text-muted); } .signoff em { font-family: var(--font-display); font-size: 16px; color: var(--accent-dark); }
+@media (max-width: 1100px) { .section { gap: 40px; } .editorialText > p { font-size: 37px; } .content h2 { font-size: 36px; } }
+@media (max-width: 760px) { .section { grid-template-columns: 1fr; padding-block: 45px; gap: 33px; } .editorial { min-height: 350px; max-height: 420px; } .editorialText { padding-left: 15px; } .editorialText > p { font-size: clamp(29px, 9.5vw, 37px); } .content { padding-inline: 8px; } .content h2 { font-size: 37px; } .content > p { font-size: 12px; } }
+

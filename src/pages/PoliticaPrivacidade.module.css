@@ -1,0 +1,9 @@
+.pagina { max-width: 820px; padding-block: 65px 80px; }
+.titulo { font-size: clamp(38px, 5vw, 55px); letter-spacing: -1px; margin-bottom: 16px; }
+.atualizado { color: var(--text-muted); font-size: 11px; margin-bottom: 35px !important; padding-bottom: 25px; border-bottom: 1px solid var(--border); }
+.pagina section { margin-bottom: 28px; }
+.pagina h2 { font-size: 26px; color: var(--primary-dark); margin-bottom: 12px; }
+.pagina p { font-size: 13px; line-height: 1.9; }
+.pagina a { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 760px) { .pagina { padding-block: 35px 45px; } .pagina p { font-size: 12px; } }
+

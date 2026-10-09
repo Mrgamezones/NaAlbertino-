@@ -1,0 +1,41 @@
+{
+  "tool": "Built-in image_gen",
+  "purpose": "Original editorial illustrations; replace product images with verified seller photos before publication.",
+  "assets": [
+    {
+      "name": "hero",
+      "prompt": "Use case: photorealistic-natural. Asset type: original fashion website hero photo for Brazilian affordable fashion curation brand NaAlbertino. Create one premium editorial photograph, wide landscape 3:2 aspect ratio. An adult Brazilian woman with dark brown hair in a relaxed low bun wears a beautiful sand-colored linen blazer, ivory ribbed camisole, and cream tailored trousers, holding a simple dark brown leather tote with no logos. She stands in the RIGHT THIRD of the frame, seen from head to upper thighs, looking naturally left. She looks warm and relatable, quiet confidence. Warm ivory plaster wall studio, soft late-afternoon sunlight and delicate plant shadows at the far right. LEFT HALF is entirely empty warm ivory plaster wall, suitable for black website text to be layered later. Neutral cream, oat, soft camel palette, photoreal linen texture, natural face, refined magazine photography, restrained art direction. No lettering, no typography, no text, no logo, no watermarks, no UI. Original composition and person.",
+      "source": "C:\\Users\\geova\\.codex\\generated_images\\01a0db6c-e1e0-77a3-b652-7d99a6caa8bb\\exec-59d8588d-56aa-4b9d-8ddc-4aa04c543b43.png"
+    },
+    {
+      "name": "cropped",
+      "prompt": "Use case: product-mockup. Asset type: illustrative fashion catalog photograph for a minimalist Brazilian curated clothing website. An ivory short-sleeve ribbed cropped T-shirt, round neckline, displayed hanging neatly on a natural oak wooden hanger. Portrait 3:4 composition, centered subject with small but comfortable margins. Seamless warm pale greige plaster background, soft side daylight from left, delicate soft shadow, premium tactile fabric details, modern quiet editorial product photography, clean minimalist studio. Cohesive ivory, sand and taupe setting. No text, no logo, no watermark, no UI, no price tags, no extra objects. This is an illustrative editorial image, not a representation of a verified commercial SKU.",
+      "source": "C:\\Users\\geova\\.codex\\generated_images\\01a0db6c-e1e0-77a3-b652-7d99a6caa8bb\\exec-ae671ca4-f11f-4773-a9b0-4b2f4baaff10.png"
+    },
+    {
+      "name": "jeans",
+      "prompt": "Use case: product-mockup. Asset type: illustrative fashion catalog photograph for a minimalist Brazilian curated clothing website. A pair of light blue high-waisted wide leg jeans hanging neatly from a simple natural oak clip hanger, full garment visible with both wide legs. Portrait 3:4 composition, centered subject with small but comfortable margins. Seamless warm pale greige plaster background, soft side daylight from left, delicate soft shadow, premium tactile fabric details, modern quiet editorial product photography, clean minimalist studio. Cohesive ivory, sand and taupe setting. No text, no logo, no watermark, no UI, no price tags, no extra objects. This is an illustrative editorial image, not a representation of a verified commercial SKU.",
+      "source": "C:\\Users\\geova\\.codex\\generated_images\\01a0db6c-e1e0-77a3-b652-7d99a6caa8bb\\exec-2a569f0f-e764-4518-841c-93ad6c4c7479.png"
+    },
+    {
+      "name": "alfaiataria",
+      "prompt": "Use case: product-mockup. Asset type: illustrative fashion catalog photograph for a minimalist Brazilian curated clothing website. An adult Brazilian woman with brown hair wearing a relaxed beige linen tailored blazer and matching high waisted trousers, standing naturally with one hand in pocket. Framed from head to mid shin. Portrait 3:4 composition, centered subject with small but comfortable margins. Seamless warm pale greige plaster background, soft side daylight from left, delicate soft shadow, premium tactile fabric details, modern quiet editorial product photography, clean minimalist studio. Cohesive ivory, sand and taupe setting. No text, no logo, no watermark, no UI, no price tags, no extra objects. This is an illustrative editorial image, not a representation of a verified commercial SKU.",
+      "source": "C:\\Users\\geova\\.codex\\generated_images\\01a0db6c-e1e0-77a3-b652-7d99a6caa8bb\\exec-b4a2763d-6df3-484c-b547-005ce8b8c24c.png"
+    },
+    {
+      "name": "vestido",
+      "prompt": "Use case: product-mockup. Asset type: illustrative fashion catalog photograph for a minimalist Brazilian curated clothing website. A sleeveless cream midi dress with a delicate tiny ochre and muted olive botanical floral print, hanging gracefully on a simple natural oak hanger. Full dress visible. Portrait 3:4 composition, centered subject with small but comfortable margins. Seamless warm pale greige plaster background, soft side daylight from left, delicate soft shadow, premium tactile fabric details, modern quiet editorial product photography, clean minimalist studio. Cohesive ivory, sand and taupe setting. No text, no logo, no watermark, no UI, no price tags, no extra objects. This is an illustrative editorial image, not a representation of a verified commercial SKU.",
+      "source": "C:\\Users\\geova\\.codex\\generated_images\\01a0db6c-e1e0-77a3-b652-7d99a6caa8bb\\exec-5ca09701-666c-41c6-999c-ed596d2beb1d.png"
+    },
+    {
+      "name": "camiseta",
+      "prompt": "Use case: product-mockup. Asset type: illustrative fashion catalog photograph for a minimalist Brazilian curated clothing website. A plain espresso brown premium cotton oversized short sleeve men's crew neck T-shirt, hanging on a simple natural oak hanger, beautiful heavyweight cotton drape. Portrait 3:4 composition, centered subject with small but comfortable margins. Seamless warm pale greige plaster background, soft side daylight from left, delicate soft shadow, premium tactile fabric details, modern quiet editorial product photography, clean minimalist studio. Cohesive ivory, sand and taupe setting. No text, no logo, no watermark, no UI, no price tags, no extra objects. This is an illustrative editorial image, not a representation of a verified commercial SKU.",
+      "source": "C:\\Users\\geova\\.codex\\generated_images\\01a0db6c-e1e0-77a3-b652-7d99a6caa8bb\\exec-b2953815-7a99-411c-b06d-63d8261ca994.png"
+    },
+    {
+      "name": "bermuda",
+      "prompt": "Use case: product-mockup. Asset type: illustrative fashion catalog photograph for a minimalist Brazilian curated clothing website. A pair of beige men's slim chino shorts, neatly hanging on a natural oak clip hanger, full garment visible. Portrait 3:4 composition, centered subject with small but comfortable margins. Seamless warm pale greige plaster background, soft side daylight from left, delicate soft shadow, premium tactile fabric details, modern quiet editorial product photography, clean minimalist studio. Cohesive ivory, sand and taupe setting. No text, no logo, no watermark, no UI, no price tags, no extra objects. This is an illustrative editorial image, not a representation of a verified commercial SKU.",
+      "source": "C:\\Users\\geova\\.codex\\generated_images\\01a0db6c-e1e0-77a3-b652-7d99a6caa8bb\\exec-c69d1b36-a79f-4f2c-97fb-3630ca4016a0.png"
+    }
+  ]
+}
