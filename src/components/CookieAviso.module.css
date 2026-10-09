@@ -1,7 +1,7 @@
 .aviso { position: fixed; right: 22px; bottom: 20px; z-index: 60; width: 365px; display: flex; flex-direction: column; gap: 12px; padding: 20px; background: var(--glass); backdrop-filter: blur(16px); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
-.texto { margin: 0; font-size: 10px; line-height: 1.9; color: var(--text-muted); }
+.texto { margin: 0; font-size: var(--fs-sm); line-height: 1.9; color: var(--text-muted); }
 .link { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
-.botao { align-self: flex-end; padding: 9px 23px; min-height: 40px; border: 0; border-radius: var(--radius-sm); background: var(--primary); color: var(--surface); font-size: 10px; font-weight: 600; }
+.botao { align-self: flex-end; padding: 9px 23px; min-height: 40px; border: 0; border-radius: var(--radius-sm); background: var(--primary); color: var(--surface); font-size: var(--fs-sm); font-weight: 600; }
 .botao:hover { background: var(--primary-dark); }
-@media (max-width: 760px) { .aviso { width: auto; left: 14px; right: 14px; bottom: 12px; padding: 15px 17px; gap: 7px; } .texto { font-size: 10px; } .botao { min-height: 38px; padding: 8px 25px; } }
+@media (max-width: 760px) { .aviso { width: auto; left: 14px; right: 14px; bottom: 12px; padding: 15px 17px; gap: 7px; } .texto { font-size: var(--fs-sm); } .botao { min-height: 38px; padding: 8px 25px; } }
 

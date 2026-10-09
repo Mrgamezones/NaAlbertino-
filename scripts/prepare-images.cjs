@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const sharp = require(require.resolve('sharp', { paths: [process.env.CODEX_NODE_MODULES || 'C:/Users/geova/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules'] }));
+// Requer o sharp: rode `npm install --no-save sharp` antes de usar este script.
+const sharp = require('sharp');
 
 async function main() {
   const root = path.resolve(__dirname, '..');

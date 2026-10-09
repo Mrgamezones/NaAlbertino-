@@ -7,8 +7,19 @@ const SELOS = [
   { icone: "ticket", titulo: "Um desconto a mais", texto: "Cupons para aproveitar" },
   { icone: "refresh", titulo: "Sempre uma novidade", texto: "Novos achadinhos toda semana" },
 ];
+
 export default function Selos() {
-  return <section className={`container ${styles.seguranca}`} aria-label="Nossa curadoria">
-    {SELOS.map(selo => <div key={selo.titulo} className={styles.item}><Icon name={selo.icone} size={25} /><div><h2>{selo.titulo}</h2><p>{selo.texto}</p></div></div>)}
-  </section>;
+  return (
+    <section className={`container ${styles.seguranca}`} aria-label="Nossa curadoria">
+      {SELOS.map(selo => (
+        <div key={selo.titulo} className={styles.item}>
+          <Icon name={selo.icone} size={25} />
+          <div>
+            <h2>{selo.titulo}</h2>
+            <p>{selo.texto}</p>
+          </div>
+        </div>
+      ))}
+    </section>
+  );
 }

@@ -1,45 +1,55 @@
 # NaAlbertino — Promoções
 
-Vitrine de moda e cupons em React + Vite. A identidade foi adaptada à referência visual fornecida: tons de marfim e areia, Cormorant Garamond nos títulos, Manrope na interface, fotografia editorial, espaçamento amplo e detalhes em bronze.
+Vitrine de moda e cupons em React + Vite. A identidade usa tons de marfim e areia, Cormorant Garamond nos títulos, Manrope na interface, fotografia editorial, espaçamento amplo e detalhes em bronze.
 
 ## Executar
 
 ```sh
 npm install
-npm run dev
-npm run build
+npm run dev       # desenvolvimento em http://localhost:5173
+npm run build     # gera dist/ com o HTML pronto de cada página
+npm run preview   # serve o dist/ em http://127.0.0.1:5173, como no Netlify
 ```
 
-Se a instalação global do npm estiver quebrada e as dependências já estiverem instaladas, os comandos equivalentes são:
+## Antes de publicar (pendências de conteúdo)
 
-```sh
-node node_modules/vite/bin/vite.js --host 127.0.0.1 --port 5173
-node node_modules/vite/bin/vite.js build
-```
+Estes itens dependem de informações reais e estão marcados com `PENDENTE` no código:
+
+- `src/data/produtos.js`: os `link` ainda apontam para a página inicial da Shopee, sem link de afiliado. As fotos são ilustrativas, geradas por IA.
+- `src/data/config.js`: `url` (domínio definitivo), perfis de Instagram/TikTok, número do WhatsApp e os e-mails de contato e do DPO.
+- `src/data/cupons.js`: conferir se cada código existe na loja parceira.
 
 ## Conteúdo e visual
 
-- `src/styles/tokens.css`: cores, fontes, medidas e raios.
-- `src/data/config.js`: marca, redes sociais e contatos.
-- `src/data/produtos.js`: produtos, categorias, preços, links e imagens. `destaque: true` seleciona o produto do hero. `imagemIlustrativa: true` identifica fotos conceituais.
-- `src/data/cupons.js`: cupons e categorias dos filtros.
-- `public/images`: imagens originais geradas com a ferramenta integrada image_gen e otimizadas para WebP.
-- `docs/visual-assets.json`: prompts e procedência das imagens.
-- `public/fonts`: fontes servidas localmente e sua licença.
+- `src/styles/tokens.css`: cores, fontes, escala de tamanhos de texto, medidas e raios.
+- `src/data/config.js`: marca, URL, slogan, imagens do Hero e da seção Sobre, rótulos de categoria, redes sociais, contatos e data da Política de Privacidade.
+- `src/data/paginas.js`: título e descrição de cada página.
+- `src/data/produtos.js`: produtos com `id` único. `destaque: true` seleciona o produto do Hero e `imagemIlustrativa: true` identifica fotos conceituais.
+- `src/data/cupons.js`: cupons, categorias dos filtros e `validoAte`. Cupons vencidos somem sozinhos.
+- `public/images`: imagens em WebP e `og.jpg` (1200×630, prévia ao compartilhar o link). `docs/visual-assets.json` registra os prompts e a origem das imagens.
+- `public/fonts`: fontes em WOFF2 (subconjunto latino, ~68 KB no total) e a licença.
 
-Os preços, cupons e URLs comerciais existentes foram preservados. As fotos geradas são ilustrativas, não fotos verificadas de anúncios. Os links de produtos atualmente apontam para a página inicial da Shopee; as redes sociais e o WhatsApp também contêm endereços genéricos na configuração original.
+## Como o build funciona
+
+`npm run build` executa três etapas:
+
+1. `vite build` gera o JavaScript e o CSS.
+2. `vite build --ssr src/entry-server.jsx` gera a versão para servidor.
+3. `scripts/prerender.mjs` grava `index.html`, `politica-privacidade.html` e `404.html` com o conteúdo já renderizado, título, descrição, link canônico, tags Open Graph e dados estruturados (schema.org). Também cria `sitemap.xml` e `robots.txt`.
+
+No navegador, o React assume o HTML pronto (hidratação). Por isso os componentes só leem `localStorage` e `window` dentro de `useEffect`. No Netlify, endereços inexistentes recebem o `404.html` com status 404.
 
 ## Interações
 
-Busca sem distinção de acentos, categorias dinâmicas, favoritos salvos neste navegador, expansão da seleção, filtros e cópia de cupons, menu móvel e rota de privacidade. Links de afiliado mantêm `noopener sponsored`.
+Busca sem distinção de acentos, filtros por categoria, favoritos salvos neste navegador (os favoritos antigos, salvos pelo nome, são migrados para o `id`), expansão da seleção, filtros e cópia de cupons, menu fixo que indica a seção visível, menu móvel e páginas de privacidade e 404. Links de afiliado mantêm `noopener sponsored`.
 
 ## Verificação
 
-`scripts/check-ui.cjs` verifica os fluxos no Chrome sem interface e gera capturas em `artifacts/`. Requer Playwright e Chrome disponíveis. O script usa o runtime do Codex desta máquina por padrão; para outra instalação, informe `CODEX_NODE_MODULES`. A URL padrão é `http://127.0.0.1:5173`, configurável por `PREVIEW_URL`.
+Os testes usam o `playwright-core` do projeto com o Google Chrome instalado na máquina. Com o `npm run preview` rodando:
 
 ```sh
-node scripts/check-ui.cjs
-node scripts/check-regressions.cjs
+npm run test:ui
+npm run test:regressoes
 ```
 
-O teste de regressões verifica avisos do console, retorno ao início ao clicar na marca, link de voltar ao topo, indicação da seção atual no menu e contenção do texto editorial no tablet.
+`test:ui` cobre filtros, busca, favoritos, cupons, privacidade, 404, menu fixo e móvel, imagens e 5 larguras de tela, e salva capturas em `artifacts/`. Defina `ESPERA_STATUS_404=1` para exigir o status HTTP 404. `PREVIEW_URL` troca o endereço testado.

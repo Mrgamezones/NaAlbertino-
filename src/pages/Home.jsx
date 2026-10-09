@@ -5,5 +5,13 @@ import Produtos from "../components/Produtos.jsx";
 import Selos from "../components/Selos.jsx";
 
 export default function Home() {
-  return <main id="conteudo"><Hero /><Selos /><Produtos /><Cupons /><BannerLoja /></main>;
+  return (
+    <main id="conteudo">
+      <Hero />
+      <Selos />
+      <Produtos />
+      <Cupons />
+      <BannerLoja />
+    </main>
+  );
 }

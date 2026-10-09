@@ -1,10 +1,19 @@
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
+import { createRoot, hydrateRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App, { ROUTER_FUTURE } from "./App.jsx";
 import "./styles/global.css";
 
-createRoot(document.getElementById("root")).render(
+const raiz = document.getElementById("root");
+const app = (
   <StrictMode>
-    <App />
+    <BrowserRouter future={ROUTER_FUTURE}>
+      <App />
+    </BrowserRouter>
   </StrictMode>
 );
+
+// No build, o HTML já vem pronto (gerado por scripts/prerender.mjs) e o React
+// só assume o controle. No `npm run dev`, a página é montada do zero.
+if (raiz.hasChildNodes()) hydrateRoot(raiz, app);
+else createRoot(raiz).render(app);

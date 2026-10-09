@@ -1,0 +1,6 @@
+.pagina { padding-block: 96px 120px; text-align: center; }
+.titulo { margin-top: 16px; font-size: clamp(40px, 6vw, 64px); letter-spacing: -1.5px; }
+.titulo em { display: block; color: var(--accent-dark); font-weight: 400; }
+.texto { max-width: 440px; margin: 22px auto 0; color: var(--text-muted); font-size: var(--fs-base); line-height: 1.8; }
+.acoes { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+@media (max-width: 760px) { .pagina { padding-block: 64px 80px; } }

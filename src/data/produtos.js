@@ -1,5 +1,10 @@
+// `id` identifica o produto nos favoritos salvos no navegador: use letras
+// minúsculas, números e hífens, e não mude depois de publicado.
+// PENDENTE: trocar `link` pelo link de afiliado de cada produto e as fotos
+// ilustrativas pelas fotos reais dos anúncios (depois remova `imagemIlustrativa`).
 export const PRODUTOS = [
   {
+    id: "blusa-cropped-canelada",
     nome: "Blusa Cropped Canelada",
     imagem: "/images/cropped.webp",
     imagemIlustrativa: true,
@@ -10,6 +15,7 @@ export const PRODUTOS = [
     link: "https://shopee.com.br/",
   },
   {
+    id: "calca-jeans-wide-leg",
     nome: "Calça Jeans Wide Leg",
     imagem: "/images/jeans.webp",
     imagemIlustrativa: true,
@@ -20,6 +26,7 @@ export const PRODUTOS = [
     link: "https://shopee.com.br/",
   },
   {
+    id: "conjunto-alfaiataria",
     nome: "Conjunto Alfaiataria",
     imagem: "/images/alfaiataria.webp",
     imagemIlustrativa: true,
@@ -31,6 +38,7 @@ export const PRODUTOS = [
     link: "https://shopee.com.br/",
   },
   {
+    id: "vestido-midi-floral",
     nome: "Vestido Midi Floral",
     imagem: "/images/vestido.webp",
     imagemIlustrativa: true,
@@ -41,6 +49,7 @@ export const PRODUTOS = [
     link: "https://shopee.com.br/",
   },
   {
+    id: "camiseta-oversized-premium",
     nome: "Camiseta Oversized Premium",
     imagem: "/images/camiseta.webp",
     imagemIlustrativa: true,
@@ -51,6 +60,7 @@ export const PRODUTOS = [
     link: "https://shopee.com.br/",
   },
   {
+    id: "bermuda-sarja-slim",
     nome: "Bermuda Sarja Slim",
     imagem: "/images/bermuda.webp",
     imagemIlustrativa: true,

@@ -19,10 +19,16 @@
   --shadow-color: rgba(49, 39, 26, 0.09);
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Manrope", "Segoe UI", sans-serif;
+  /* Escala de texto da interface. Nada abaixo de --fs-xs (12px). */
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-base: 15px;
+  --fs-md: 16px;
   --radius-sm: 3px;
   --radius: 6px;
   --radius-lg: 12px;
   --shadow-sm: 0 2px 8px var(--shadow-color);
   --shadow: 0 12px 40px var(--shadow-color);
   --container: 1280px;
+  --header-h: 92px;
 }

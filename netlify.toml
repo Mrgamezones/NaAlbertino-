@@ -2,7 +2,5 @@
   command = "npm run build"
   publish = "dist"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# As páginas são geradas como arquivos (index.html, politica-privacidade.html).
+# Endereços inexistentes recebem o dist/404.html com status 404 automaticamente.

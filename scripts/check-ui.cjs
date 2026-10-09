@@ -1,7 +1,8 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const { chromium } = require(require.resolve('playwright', { paths: [process.env.CODEX_NODE_MODULES || 'C:/Users/geova/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules'] }));
+// Usa o playwright-core do projeto (npm install) com o Google Chrome instalado na máquina.
+const { chromium } = require('playwright-core');
 
 async function main() {
   const out = path.resolve('artifacts');
@@ -40,7 +41,7 @@ async function main() {
     await page.getByRole('button', { name: 'Salvos (1)', exact: true }).click();
     assert.equal(await page.locator('#produtos article').count(), 1);
     await page.reload({ waitUntil: 'networkidle' });
-    assert.equal(await page.getByRole('dialog', { name: 'Aviso de cookies' }).count(), 0);
+    assert.equal(await page.getByRole('region', { name: 'Aviso de privacidade' }).count(), 0);
     assert.equal(await page.getByRole('button', { name: 'Remover dos favoritos: Conjunto Alfaiataria' }).getAttribute('aria-pressed'), 'true');
     await page.getByRole('button', { name: 'Salvos (1)', exact: true }).click();
     await page.getByRole('button', { name: 'Remover dos favoritos: Conjunto Alfaiataria' }).click();
@@ -57,10 +58,24 @@ async function main() {
     const affiliateLinks = await page.locator('a[rel~="sponsored"]').evaluateAll(links => links.every(a => a.target === '_blank' && a.rel.includes('noopener')));
     assert.ok(affiliateLinks);
 
+    await page.evaluate(() => localStorage.setItem('naalbertino:favoritos', JSON.stringify(['Calça Jeans Wide Leg'])));
+    await page.reload({ waitUntil: 'networkidle' });
+    assert.equal(await page.getByRole('button', { name: 'Remover dos favoritos: Calça Jeans Wide Leg' }).getAttribute('aria-pressed'), 'true', 'Favorito antigo (salvo pelo nome) não foi migrado');
+    assert.deepEqual(await page.evaluate(() => JSON.parse(localStorage.getItem('naalbertino:favoritos'))), ['calca-jeans-wide-leg']);
+    await page.evaluate(() => localStorage.removeItem('naalbertino:favoritos'));
+
+    await page.locator('#cupons').scrollIntoViewIfNeeded();
+    assert.ok(await page.locator('header').evaluate(header => Math.round(header.getBoundingClientRect().top) === 0), 'Menu não ficou fixo no topo');
+
     await page.getByRole('link', { name: 'Política de Privacidade', exact: true }).click();
     await page.getByRole('heading', { name: 'Política de Privacidade', exact: true }).waitFor();
     assert.equal(await page.evaluate(() => window.scrollY), 0);
     await page.screenshot({ path: path.join(out, 'privacy.png'), fullPage: true });
+    const resposta404 = await page.goto(base + '/endereco-que-nao-existe', { waitUntil: 'networkidle' });
+    await page.getByRole('heading', { name: /não está aqui/ }).waitFor();
+    if (process.env.ESPERA_STATUS_404) assert.equal(resposta404.status(), 404);
+    // O navegador registra o 404 esperado no console; só essa mensagem é descartada.
+    errors.splice(0, errors.length, ...errors.filter(message => !message.includes('status of 404')));
     await page.goto(base, { waitUntil: 'networkidle' });
 
     for (const width of [320, 390, 768, 1024, 1440]) {
@@ -93,7 +108,7 @@ async function main() {
     }
     assert.ok(await page.locator('img').evaluateAll(images => images.every(img => img.complete && img.naturalWidth > 0)), 'An image did not load');
     assert.equal(errors.length, 0, errors.join('\n'));
-    console.log('PASS: build preview, category filters, accent-insensitive search, empty states, saved favorites and persistence, coupon filters, clipboard success/failure, affiliate attributes, privacy route, mobile menu, search focus, images, 5 responsive widths, no browser errors.');
+    console.log('PASS: build preview, 404 page, sticky header, legacy favorites migration, category filters, accent-insensitive search, empty states, saved favorites and persistence, coupon filters, clipboard success/failure, affiliate attributes, privacy route, mobile menu, search focus, images, 5 responsive widths, no browser errors.');
   } finally {
     await browser.close();
   }

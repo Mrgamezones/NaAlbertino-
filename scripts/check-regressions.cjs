@@ -1,5 +1,6 @@
 const assert = require('node:assert/strict');
-const { chromium } = require(require.resolve('playwright', { paths: [process.env.CODEX_NODE_MODULES || 'C:/Users/geova/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules'] }));
+// Usa o playwright-core do projeto (npm install) com o Google Chrome instalado na máquina.
+const { chromium } = require('playwright-core');
 
 async function main() {
   const browser = await chromium.launch({ headless: true, channel: 'chrome' });

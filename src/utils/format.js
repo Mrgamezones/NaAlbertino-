@@ -19,11 +19,21 @@ export function formatarVendidos(vendidos) {
   return `${vendidos} vendidos`;
 }
 
-export function agruparPorCategoria(itens) {
-  return itens.reduce((acc, item) => {
-    const cat = item.categoria || "Outros";
-    if (!acc[cat]) acc[cat] = [];
-    acc[cat].push(item);
-    return acc;
-  }, {});
+// Datas no formato AAAA-MM-DD, comparadas como texto (sem fuso horário).
+export function dataDeHoje(data = new Date()) {
+  const mes = String(data.getMonth() + 1).padStart(2, "0");
+  const dia = String(data.getDate()).padStart(2, "0");
+  return `${data.getFullYear()}-${mes}-${dia}`;
+}
+
+export function formatarData(iso, { comAno = true } = {}) {
+  const [ano, mes, dia] = iso.split("-");
+  return comAno ? `${dia}/${mes}/${ano}` : `${dia}/${mes}`;
+}
+
+const MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
+
+export function formatarDataPorExtenso(iso) {
+  const [ano, mes, dia] = iso.split("-").map(Number);
+  return `${dia} de ${MESES[mes - 1]} de ${ano}`;
 }
