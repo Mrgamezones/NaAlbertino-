@@ -34,7 +34,7 @@ export default function Hero() {
           <div>
             <span className={styles.featuredLabel}>NOSSO ACHADO DA VEZ</span>
             <h2>{destaque.nome}</h2>
-            <strong>R$ {destaque.precoAtual}</strong>
+            {destaque.precoAtual && <strong>R$ {destaque.precoAtual}</strong>}
             <span className={styles.featuredLink}>Conhecer a peça <Icon name="arrow" size={15} /></span>
           </div>
         </a>

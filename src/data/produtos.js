@@ -2,7 +2,18 @@
 // minúsculas, números e hífens, e não mude depois de publicado.
 // PENDENTE: trocar `link` pelo link de afiliado de cada produto e as fotos
 // ilustrativas pelas fotos reais dos anúncios (depois remova `imagemIlustrativa`).
+// `precoAtual: ""` mostra "Ver preço na Shopee" no lugar do valor.
 export const PRODUTOS = [
+  {
+    id: "vestido-jeans-tomara-que-caia",
+    nome: "Vestido Jeans Tomara que Caia com Botões",
+    imagem: "/images/vestido-jeans-tomara-que-caia.webp",
+    categoria: "Feminino",
+    precoAtual: "", // PENDENTE: preencher com o preço do anúncio
+    precoAntigo: "",
+    vendidos: 0,
+    link: "https://s.shopee.com.br/3qNRD1B1uD?share_channel_code=1",
+  },
   {
     id: "blusa-cropped-canelada",
     nome: "Blusa Cropped Canelada",

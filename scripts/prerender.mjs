@@ -46,13 +46,16 @@ function dadosEstruturados() {
             name: produto.nome,
             image: `${base}${produto.imagem}`,
             category: produto.categoria,
-            offers: {
-              "@type": "Offer",
-              url: produto.link,
-              price: precoEmNumero(produto.precoAtual),
-              priceCurrency: "BRL",
-              availability: "https://schema.org/InStock",
-            },
+            // Sem preço cadastrado, a oferta fica de fora (o Google exige o preço).
+            ...(produto.precoAtual && {
+              offers: {
+                "@type": "Offer",
+                url: produto.link,
+                price: precoEmNumero(produto.precoAtual),
+                priceCurrency: "BRL",
+                availability: "https://schema.org/InStock",
+              },
+            }),
           },
         })),
       },

@@ -39,8 +39,14 @@ export default function ProdutoCard({ produto, salvo, onSalvar }) {
         <span className={styles.category}>{rotuloDaCategoria(produto.categoria, "selo")}</span>
         <h3>{produto.nome}</h3>
         <div className={styles.prices}>
-          <strong>R$ {produto.precoAtual}</strong>
-          {produto.precoAntigo && <s>R$ {produto.precoAntigo}</s>}
+          {produto.precoAtual ? (
+            <>
+              <strong>R$ {produto.precoAtual}</strong>
+              {produto.precoAntigo && <s>R$ {produto.precoAntigo}</s>}
+            </>
+          ) : (
+            <span className={styles.semPreco}>Ver preço na Shopee</span>
+          )}
         </div>
         <div className={styles.bottom}>
           <a className={styles.offer} href={produto.link} target="_blank" rel="noopener sponsored">

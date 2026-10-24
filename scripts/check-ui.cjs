@@ -30,7 +30,7 @@ async function main() {
     assert.equal(await page.locator('#produtos article').count(), 2);
     await page.locator('#produtos').getByRole('button', { name: 'Todos', exact: true }).click();
     await page.getByRole('button', { name: 'Ver todos os achadinhos', exact: true }).click();
-    assert.equal(await page.locator('#produtos article').count(), 6);
+    assert.equal(await page.locator('#produtos article').count(), 7);
     await page.getByRole('searchbox', { name: 'Buscar produtos' }).fill('calca');
     assert.equal(await page.locator('#produtos article').count(), 1);
     assert.match(await page.locator('#produtos article h3').innerText(), /Calça/);
