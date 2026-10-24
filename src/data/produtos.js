@@ -9,7 +9,7 @@ export const PRODUTOS = [
     nome: "Vestido Jeans Tomara que Caia com Botões",
     imagem: "/images/vestido-jeans-tomara-que-caia.webp",
     categoria: "Feminino",
-    precoAtual: "", // PENDENTE: preencher com o preço do anúncio
+    precoAtual: "73,93",
     precoAntigo: "",
     vendidos: 0,
     link: "https://s.shopee.com.br/3qNRD1B1uD?share_channel_code=1",
